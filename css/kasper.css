@@ -98,6 +98,7 @@ ul {
     line-height: var(--p-line-height);
     width: 550px;
     margin: 0 auto 100px;
+    max-width: 100%;
     color: #777;
 }
 
@@ -633,10 +634,15 @@ header nav .form i {
 
 /* Start Skills */
 .our-skills .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    column-gap: 50px;
-    row-gap: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 992px) {
+    .our-skills .container>div {
+        flex-basis: 45%;
+    }
 }
 
 .our-skills .container>div>h3 {
@@ -652,6 +658,7 @@ header nav .form i {
     text-align: center;
     margin-bottom: 60px;
 }
+
 
 .our-skills .testimonials .content {
     display: flex;
